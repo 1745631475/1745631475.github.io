@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>清风昔明月</title>
+  <title>友情链接 | 清风昔明月</title>
 
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -677,7 +677,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/MyMedias/1.png" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/MyMedias/5.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
@@ -685,20 +685,10 @@
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        
+        friends
       </span>
     </div>
     
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fa fa-calendar"></i> 发表于：2021-08-20 |
-        </span>
-      
-
-      
-
-      
     
   </div>
   
@@ -714,11 +704,7 @@
     <article class="post post-detail">
       
       <div class="post-content">
-        <!--这是友情链接的配置-->
-<hr>
-<p>title: friends<br>date: 2021-06-17 15:30:30<br>onlyTitle: true # 只显示title<br>toc: false # 不显示文章目录</p>
-<h1 id="type-“friends”-这个不要了"><a href="#type-“friends”-这个不要了" class="headerlink" title="type: “friends” # 这个不要了"></a>type: “friends” # 这个不要了</h1><h1 id="layout-“friends”-这个不要了"><a href="#layout-“friends”-这个不要了" class="headerlink" title="layout: “friends” # 这个不要了"></a>layout: “friends” # 这个不要了</h1><hr>
-
+        
       </div>
       <div class="post-tags-categories">
         
@@ -731,7 +717,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/friends/index.html" target="_blank" title="">https://1745631475.github.io/friends/index.html</a>
+    <a href="/friends/index.html" target="_blank" title="friends">https://1745631475.github.io/friends/index.html</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -972,47 +958,22 @@
   <!-- 目录 -->
   <!-- 文章详情页右侧目录 -->
 
-  <div class="toc-aside">
-    <div class="toc-main">
-      <div class="toc-aside-title">
-        <i class="fa fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
-        
-          <div class="toc-open-close">本文目录</div>
-        
-      </div>
-      <div class="toc-content">
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-  <!-- js在scripts目录下的的toc.ejs里面 -->
-  
-
-  <script>
-    function openBtnClickFn () {
-      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-      let open = eval('' || 'true');
-      openOrCloseBtn.click(function() {
-        if (open === true) {
-          $(".toc-aside").css({'width': 0, 'padding': 0});
-          $(".toc-content").css({'width': 0});
-          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-          open = false;
-        } else {
-          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
-          $(".toc-content").css({'width': '300px'});
-          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-          open = true;
-        }
-      });
-    };
-    openBtnClickFn();
-    document.addEventListener('pjax:complete', function () {
-      openBtnClickFn();
-    })
-  </script>
+  <style>
+    .toc-aside {
+      width: 0;
+      padding: 0;
+    }
+    .toc-aside .toc-content {
+      width: 0;
+    }
+    .toc-aside-title span, .toc-aside-title i {
+      display: none;
+    }
+    .main-content {
+      width: 75%;
+      margin: 10px auto;
+    }
+  </style>
 
 
   
@@ -1704,7 +1665,7 @@
     var pjax = new Pjax({
       elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
       selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
-      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      cacheBust: true,   // url 地址追加时间戳，用以避免浏览器缓存
       timeout: 5000
     });
 

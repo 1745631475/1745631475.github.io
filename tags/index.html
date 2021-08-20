@@ -245,29 +245,20 @@
                   </li>
                   
                   <li>
-                    <a href="/huoban">
+                    <a href="/friends">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>友情链接</span>
                     </a>
                   </li>
                   
                   <li>
-                    <a href="/me">
+                    <a href="/about">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
                       <span>关于我</span>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a target="_blank" rel="noopener" href="http://baidu.com">
-                      
-                      <i class="fa fa-film" style="margin-top: -20px;"></i>
-                      
-                      <span>百度</span>
                     </a>
                   </li>
                   
@@ -432,29 +423,20 @@
                   </li>
                   
                   <li>
-                    <a href="/huoban">
+                    <a href="/friends">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
-                      <span>友情连接</span>
+                      <span>友情链接</span>
                     </a>
                   </li>
                   
                   <li>
-                    <a href="/me">
+                    <a href="/about">
                       
                       <i class="fa fa-film" style="margin-top: -20px;"></i>
                       
                       <span>关于我</span>
-                    </a>
-                  </li>
-                  
-                  <li>
-                    <a target="_blank" rel="noopener" href="http://baidu.com">
-                      
-                      <i class="fa fa-film" style="margin-top: -20px;"></i>
-                      
-                      <span>百度</span>
                     </a>
                   </li>
                   
@@ -680,9 +662,9 @@
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
 <div class="bg-light-floor-tags" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="lazyload tags-header" data-original="https://pic2.zhimg.com/80/v2-bf6c555e7c61a57ba4a1fd95a9a32975_1440w.jpg">
+<div class="lazyload tags-header" data-original="/MyMedias/6.jpg">
     <div class="tags-header-title">
-        tags
+        标签
     </div>
     <div class="tags-header-desc">
     
@@ -717,6 +699,22 @@
             </div>
             <div class="tag-chips">
                 
+                
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" title="博客: 1">
+                    <span class="tag-content"
+                        title="博客" style="background-color: #F8F9F9;">博客
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E4%BB%8B%E7%BB%8D/" title="介绍: 1">
+                    <span class="tag-content"
+                        title="介绍" style="background-color: #F5EEF8;">介绍
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
@@ -729,14 +727,6 @@
     <div class="footer bg-color">
   <div class="footer-main">
     <div class="link">
-      
-        
-          <a href="mailto:1745631475@qq.com" class="social">
-            
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-            
-          </a>
-        
       
         
           <a target="_blank" rel="noopener" href="https://github.com/1745631475" class="social">
@@ -1156,10 +1146,14 @@
     
         <!-- 弹幕所需的css和js -->
         
+  <!-- 弹幕插件 -->
+  <link href="/js/danmu/barrager.css" rel="stylesheet">
+  <script src="/js/danmu/jquery.barrager.js"></script>
+
 <!-- 具体js，请前往valine/script.ejs查看 -->
 
         <script>
-  var requiredFields = '';
+  var requiredFields = 'nick,mail';
   requiredFields = requiredFields.split(',');
   comment_el = '.comment';
   let looperValine = null;
@@ -1170,11 +1164,11 @@
         path: window.location.pathname,
         notify: false,
         verify: false,
-        app_id: "",
-        app_key: "",
+        app_id: "rPghw5MiyEdwVwpotyL03SWT-gzGzoHsz",
+        app_key: "uBX8kNkoim2FvrKfr4IulQ8d",
         placeholder: "客官，说点什么吧",
-        avatar: "",
-        master: "",   //博主邮箱md5
+        avatar: "mp",
+        master: "7d35db87b0c070d7826d951d08eccd66",   //博主邮箱md5
         tagMeta: ["博主","小伙伴","访客"],     //标识字段名
         friends: "",
         metaPlaceholder: { "nick": "昵称/QQ号", "mail": "邮箱" },
@@ -1194,8 +1188,8 @@
         }
       }
       //查询评论 valine.Q('*').limit(7) -- 查询所有，限制7条, 下面的的代码是查询当前页面
-      var themeDanmu = eval('false');
-      var themeLoop = eval('false');
+      var themeDanmu = eval('true');
+      var themeLoop = eval('true');
       var themeLooperTime = '5000' || 5000;
       var speed = '40' || 20;
       var isBarrager = true;
@@ -1274,6 +1268,10 @@
   };
   $(document).ready(load_valine);
   document.addEventListener('pjax:send', function (e) {
+    
+      $('.danmuBox').length > 0 && $('.danmuBox').remove()
+      looperValine && clearInterval(looperValine);
+      $.fn.barrager.removeAll();
     
   })
   document.addEventListener('pjax:complete', function () {
